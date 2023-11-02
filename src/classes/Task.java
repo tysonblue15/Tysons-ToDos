@@ -16,7 +16,7 @@ public class Task extends JPanel{
 	private JTextField taskName;
 	private JButton done;
 	
-	private boolean checked;
+	public boolean checked;
 	
 	//Constructor
 	Task(){
@@ -54,9 +54,17 @@ public class Task extends JPanel{
 	}
 	
 	public void changeState() {
-		this.setBackground(Color.green);
-		taskName.setBackground(Color.green);
-		checked = true;
-		done.setText("Undo");
+		if(checked == false) {
+			this.setBackground(Color.green);
+			taskName.setBackground(Color.green);
+			checked = true;
+			done.setText("Undo");	
+		}
+		else {
+			this.setBackground(Color.red);
+			taskName.setBackground(Color.red);
+			checked = false;
+			done.setText("Done");
+		}
 	}
 }

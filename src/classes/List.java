@@ -17,6 +17,17 @@ public class List extends JPanel{
 		//this.setBackground(Color.blue);
 	}
 	
+	public void removeTasks() {
+		Component[] listItems = this.getComponents();
+
+		for(int i = 0; i < listItems.length; i++) {
+			if(listItems[i] instanceof Task && ((Task)listItems[i]).checked == true) {
+				this.remove(listItems[i]);
+			}	
+		}
+		//Bug deleting bottom task
+	}
+	
 	public void updateNumbers() {
 		Component[] listItems = this.getComponents();
 		
