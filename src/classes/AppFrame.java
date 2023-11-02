@@ -6,12 +6,14 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
 public class AppFrame extends JFrame{
 
 	private TitleBar title;
 	private List list;
 	private ButtonPanel btnPanel;
+	private UserInput userInput;
 	
 	private JButton addTask;
 	private JButton clear;
@@ -25,6 +27,7 @@ public class AppFrame extends JFrame{
 		title = new TitleBar();
 		list = new List();
 		btnPanel = new ButtonPanel();
+		
 		this.add(title, BorderLayout.NORTH);
 		this.add(btnPanel,BorderLayout.SOUTH);
 		
@@ -39,10 +42,12 @@ public class AppFrame extends JFrame{
 	public void addListeners() {
 		addTask.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mousePressed(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {		
 				Task task = new Task();
 				list.add(task);
 				list.updateNumbers();
+				UserInput userInput = new UserInput(task);
+				
 				
 				task.getDone().addMouseListener(new MouseAdapter() {
 					@Override

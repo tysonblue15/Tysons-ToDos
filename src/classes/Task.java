@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 public class Task extends JPanel{
 	
 	private JLabel index;
-	private JTextField taskName;
+	public JTextField taskName;
 	private JButton done;
 	
 	public boolean checked;
