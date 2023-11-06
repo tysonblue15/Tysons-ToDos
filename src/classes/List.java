@@ -21,8 +21,9 @@ public class List extends JPanel{
 		Component[] listItems = this.getComponents();
 
 		for(int i = 0; i < listItems.length; i++) {
-			if(listItems[i] instanceof Task && ((Task)listItems[i]).checked == true) {
+			if(((Task)listItems[i]).checked == true) {
 				this.remove(listItems[i]);
+				revalidate();
 			}	
 		}
 		//Bug deleting bottom task
