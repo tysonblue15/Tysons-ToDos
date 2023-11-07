@@ -20,13 +20,14 @@ public class List extends JPanel{
 	public void removeTasks() {
 		Component[] listItems = this.getComponents();
 
-		for(int i = 0; i < listItems.length; i++) {
-			if(((Task)listItems[i]).checked == true) {
-				this.remove(listItems[i]);
-				revalidate();
-			}	
-		}
-		//Bug deleting bottom task
+		for (int i = listItems.length - 1; i >= 0; i--) {
+	        if (((Task) listItems[i]).checked) {
+	            this.remove(listItems[i]);
+	            
+	        }
+	    }
+		revalidate();
+		repaint();
 	}
 	
 	public void updateNumbers() {
