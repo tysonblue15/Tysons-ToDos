@@ -1,6 +1,7 @@
 package classes;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -24,6 +25,8 @@ public class AppFrame extends JFrame{
 		this.setSize(400, 700);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
+		Color custom = new Color(245, 153, 66);
+		this.getContentPane().setBackground(custom);
 		
 		title = new TitleBar();
 		list = new List();

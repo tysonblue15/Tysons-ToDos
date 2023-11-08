@@ -19,11 +19,15 @@ public class ButtonPanel extends JPanel{
 	//Constructor
 	ButtonPanel(){
 		this.setPreferredSize(new Dimension(400, 60));
-		//this.setBackground(Color.red);
+		Color custom = new Color(245, 153, 66);
+		this.setBackground(custom);
+		
+		Color buttonColor = new Color(181, 136, 94);
 		
 		addTask = new JButton("Add Task");
 		addTask.setBorder(emptyBorder);
-		addTask.setFont(new Font("Sans-serif",Font.PLAIN, 20));
+		addTask.setFont(new Font("Sans-serif",Font.PLAIN, 22));
+		addTask.setBackground(buttonColor);
 		
 		this.add(addTask);
 		
@@ -31,7 +35,8 @@ public class ButtonPanel extends JPanel{
 		
 		clear = new JButton("Clear Completed Tasks");
 		clear.setBorder(emptyBorder);
-		clear.setFont(new Font("Sans-serif",Font.PLAIN, 20));
+		clear.setFont(new Font("Sans-serif",Font.PLAIN, 22));
+		clear.setBackground(buttonColor);
 		
 		this.add(clear);
 	}

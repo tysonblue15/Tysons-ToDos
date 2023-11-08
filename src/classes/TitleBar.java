@@ -12,11 +12,12 @@ public class TitleBar extends JPanel{
 	//Constructor
 	TitleBar(){
 		this.setPreferredSize(new Dimension(400, 80));
-		//this.setBackground(Color.red);
+		Color custom = new Color(245, 153, 66);
+		this.setBackground(custom);
 		
 		JLabel titleText = new JLabel("Tyson's ToDos");
-		titleText.setPreferredSize(new Dimension(200, 80));
-		titleText.setFont(new Font("Sans-serif", Font.BOLD, 20));
+		titleText.setPreferredSize(new Dimension(300, 80));
+		titleText.setFont(new Font("Sans-serif", Font.BOLD, 30));
 		titleText.setHorizontalAlignment(JLabel.CENTER);
 		
 		this.add(titleText);

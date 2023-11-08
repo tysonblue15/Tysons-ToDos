@@ -18,10 +18,13 @@ public class Task extends JPanel{
 	
 	public boolean checked;
 	
+	Color notDone = new Color(173, 47, 47);
+	Color isDone = new Color(47, 173, 58);
+	
 	//Constructor
 	Task(){
 		this.setPreferredSize(new Dimension(40, 20));
-		this.setBackground(Color.red);
+		this.setBackground(notDone);
 		
 		this.setLayout(new BorderLayout());
 		
@@ -34,12 +37,14 @@ public class Task extends JPanel{
 		
 		taskName = new JTextField("Your take here!");
 		taskName.setBorder(BorderFactory.createEmptyBorder());
-		taskName.setBackground(Color.red);
+		taskName.setBackground(notDone);
 		this.add(taskName,BorderLayout.CENTER);
 		
 		done = new JButton("Done");
 		done.setPreferredSize(new Dimension(40, 20));
 		done.setBorder(BorderFactory.createEmptyBorder());
+		Color buttonColor = new Color(181, 136, 94);
+		done.setBackground(buttonColor);
 		
 		this.add(done,BorderLayout.EAST);
 	}
@@ -54,15 +59,16 @@ public class Task extends JPanel{
 	}
 	
 	public void changeState() {
+		
 		if(checked == false) {
-			this.setBackground(Color.green);
-			taskName.setBackground(Color.green);
+			this.setBackground(isDone);
+			taskName.setBackground(isDone);
 			checked = true;
 			done.setText("Undo");	
 		}
 		else {
-			this.setBackground(Color.red);
-			taskName.setBackground(Color.red);
+			this.setBackground(notDone);
+			taskName.setBackground(notDone);
 			checked = false;
 			done.setText("Done");
 		}
